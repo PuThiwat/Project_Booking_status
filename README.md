@@ -136,5 +136,30 @@ if($result)
             <form>       
     </body>
 </html>
+//PHPinsertmember
+<?php
+require './dbConnect.php';
+$num_room=$_POST['room'];
+$title=$_POST['title'];
+$fname=$_POST['fname'];
+$lname=$_POST['lname'];
+$address=$_POST['address'];
+$id_card=$_POST['idcard'];
+$email=$_POST['mail'];
+$phone=$_POST['phone'];
+$price=$_POST['price'];
+$adult=$_POST['adult'];
+$child=$_POST['child'];
+
+$sql="insert into member_room(room,title,fname,lname,address,idcard,mail,phone,price,adult,child)value('$num_room','$title','$fname','$lname','$address','$id_card','$email','$phone','$price','$adult','$child')";
+$result= mysqli_query($con,$sql);
+if($result)
+{
+    echo "<a href='member.php'>บันทึกข้อมูลเรียบร้อย</a>";
+}
+else
+{
+    echo mysqli_error($con);
+}
 
 
