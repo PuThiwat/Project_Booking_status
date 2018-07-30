@@ -88,4 +88,53 @@ if($result)
             
     </body>
 </html>
+    <!--member-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Member</title>
+    </head>
+    <body>
+        <form method="post" action="insertmember.php">
+            ชื่อ (Name)   :
+            <select name="title" style="width:100px;">
+                <option value="Mr">นาย/Mr.</option>
+                <option value="Mrs">นางสาว/Mrs.</option>
+            </select>
+            <input type="text" name="fname">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            นามสกุล(Surname) : <input type="text" name="lname"> 
+            <br><br>
+            มือถือ(Moblie Phone) :
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="phone">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ที่อยู่ (Address) : <input size="31"type="text" name="address">
+            <br>
+            <sub>(กรุณากรอกให้ครบจำนวน10หลัก)</sub>
+            <br><br>
+            เลขบัตรประชาชน (ID Card): <input type="text" name="idcard">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            E-mail : <input type="text" name="mail">
+            <br><sub>(กรุณากรอกให้ครบ13หลัก)</sub>
+            <br><br>
+            กรุณาเลือกห้อง (Please select a room) :
+            <select name="room" style="width:100px;">    
+                <option value="suit">Suit room</option>
+                <option value="vip">VIP  room</option>
+                <option value="plain">Ordinary room</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ราคา (Price) : <input type="text" name="price">
+            <br><br>
+            ผู้ใหญ่ (Adult) : <input type="text" name="adult" style="width:30px;">
+            ผู้ใหญ่ (Child) : <input type="text" name="child" style="width:30px;">
+            <br><br>
+            <input type="submit" name="save" value="ตกลง">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" name="cancel" value="ยกเลิก">
+            <form>       
+    </body>
+</html>
+
 
