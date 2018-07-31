@@ -115,11 +115,11 @@ if($result)
             <br><br>
             เลขบัตรประชาชน (ID Card): <input type="text" name="idcard">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            E-mail : <input type="text" name="mail">
+            E-mail : <input type="text" name="email">
             <br><sub>(กรุณากรอกให้ครบ13หลัก)</sub>
             <br><br>
             กรุณาเลือกห้อง (Please select a room) :
-            <select name="room" style="width:100px;">    
+            <select name="numroom" style="width:100px;">    
                 <option value="suit">Suit room</option>
                 <option value="vip">VIP  room</option>
                 <option value="plain">Ordinary room</option>
@@ -139,13 +139,13 @@ if($result)
 //PHPinsertmember
 <?php
 require './dbConnect.php';
-$num_room=$_POST['room'];
+$numroom=$_POST['room'];
 $title=$_POST['title'];
 $fname=$_POST['fname'];
 $lname=$_POST['lname'];
 $address=$_POST['address'];
-$id_card=$_POST['idcard'];
-$email=$_POST['mail'];
+$idcard=$_POST['idcard'];
+$email=$_POST['email'];
 $phone=$_POST['phone'];
 $price=$_POST['price'];
 $adult=$_POST['adult'];
