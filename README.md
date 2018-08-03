@@ -3,6 +3,60 @@
 $con= mysqli_connect("localhost", "root","","projectroom") or die("ไม่สามารถเชื่อข้อมูลได้");
 echo "";
 ?>
+<!--Home page-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+    </head>
+    <body>
+    <style>
+    input[type=submit] 
+    {
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    </style>
+    
+    <style>
+    .header{width:800px; height:100px; background-color:blanchedalmond; color:scrollbar } 
+    .Article{float:right; width:80%; height:500px; background-color:bisque }
+    .aside{width:20%; background-color:burlywood; float:left; height:500px; text-align:left}
+    .footer{background-color:peru; height:200px; clear:both}
+    </style>    
+    
+    <div style="width:800px; margin:0 auto;">
+        <div class="header"> 
+            <h1 style="text-align:center">HomePage</h1>    
+        </div>
+        
+        <div class="Article">
+        
+        </div>
+        
+        <div class="aside">
+        <form  method="post" action="member.php">
+            <input type="submit" name="mbtn" value="สมัครสมาชิก" style="width:100px">
+        </form>
+        <form method="post" action="index.php">
+            <input type="submit" name="ibtn" value="สถานะจอง" style="width:100px">
+        </form>
+        </div>
+        
+        <div class="footer">
+        
+        </div>
+    </div>    
+        
+    </body>
+</html>
+
 <!--ShowReservationStatus-->
 <html>
     <head>
@@ -88,54 +142,85 @@ if($result)
             
     </body>
 </html>
-    <!--member-->
-<html>
+<!--member-->
+<html> 
     <head>
         <meta charset="UTF-8">
         <title>Member</title>
     </head>
     <body>
-        <form method="post" action="insertmember.php">
-            ชื่อ (Name)   :
+    <style>
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+    </style>
+    <style>
+        .tname{background-color:blanchedalmond; width:1000px; height:10%}
+        .lname{float:left; background-color:blanchedalmond; height:300px; width:40%}
+        .rname{float:left; background-color:blanchedalmond; height:300px; width:60%}
+        .lname{}
+    </style>
+    <form method="post" action="insertmember.php">
+        <div>
+        <div style="width:1000px; margin:0 auto">
+            <div class="tname">
+                <h1 style="text-align:center">กรุณากรอกข้อมูล</h1>
+            </div>
+            
+            <div class="lname">
+               ชื่อ (Name)   :
             <select name="title" style="width:100px;">
                 <option value="Mr">นาย/Mr.</option>
                 <option value="Mrs">นางสาว/Mrs.</option>
             </select>
             <input type="text" name="fname">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            นามสกุล(Surname) : <input type="text" name="lname"> 
             <br><br>
-            มือถือ(Moblie Phone) :
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" name="phone">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            ที่อยู่ (Address) : <input size="31"type="text" name="address">
-            <br>
+            มือถือ(Moblie Phone) : <input type="text" name="phone"><br>
             <sub>(กรุณากรอกให้ครบจำนวน10หลัก)</sub>
-            <br><br>
-            เลขบัตรประชาชน (ID Card): <input type="text" name="idcard">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            E-mail : <input type="text" name="email">
-            <br><sub>(กรุณากรอกให้ครบ13หลัก)</sub>
-            <br><br>
+            <br>
+            เลขบัตรประชาชน (ID Card): <input type="text" name="idcard"><br>
+            <sub>(กรุณากรอกให้ครบ13หลัก)</sub>
+            <br>
             กรุณาเลือกห้อง (Please select a room) :
             <select name="numroom" style="width:100px;">    
                 <option value="suit">Suit room</option>
                 <option value="vip">VIP  room</option>
                 <option value="plain">Ordinary room</option>
             </select>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            ราคา (Price) : <input type="text" name="price">
             <br><br>
             ผู้ใหญ่ (Adult) : <input type="text" name="adult" style="width:30px;">
             ผู้ใหญ่ (Child) : <input type="text" name="child" style="width:30px;">
-            <br><br>
-            <input type="submit" name="save" value="ตกลง">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="submit" name="cancel" value="ยกเลิก">
-            <form>       
+            </div>
+            
+            <div class="rname">
+                นามสกุล(Surname) : <input type="text" name="lname">
+                <br><br>
+                ที่อยู่ (Address) : <input size="31"type="text" name="address">
+                <br><br>
+                E-mail : <input type="text" name="email">
+                <br><br>
+                ราคา (Price) : <input type="text" name="price">
+                <br><br>
+            </div>
+            
+            <div class="lowname">
+                <input type="submit" name="save" value="ตกลง" style="width:60px" onclick="alert('ทำการบันทึกข้อมูลเรียบร้อย')">
+            </div>
+        </div>
+        
+    </form>
+    
+      
     </body>
 </html>
+
 //PHPinsertmember
 <?php
 require './dbConnect.php';
